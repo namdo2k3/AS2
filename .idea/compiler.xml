@@ -10,8 +10,5 @@
         <module name="AS2" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="AS2" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
