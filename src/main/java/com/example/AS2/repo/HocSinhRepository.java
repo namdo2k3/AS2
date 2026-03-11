@@ -37,16 +37,6 @@ public class HocSinhRepository {
             e.printStackTrace();
         }
     }
-    public void HocSinhXoa(Integer id) {
-        try{
-            session.getTransaction().begin();
-            session.delete(this.getById(id));
-            session.getTransaction().commit();
-        }catch (Exception e) {
-            session.getTransaction().rollback();
-            e.printStackTrace();
-        }
-    }
     public List<HocSinh> thangnambingao(HocSinh hs) {
         Query query = session.createQuery("SELECT hs FROM HocSinh order by hs.hoTen");
         return query.getResultList();
