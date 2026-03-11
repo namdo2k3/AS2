@@ -2,6 +2,7 @@ package com.example.AS2.repo;
 
 import com.example.AS2.model.HocSinh;
 import com.example.AS2.ulti.HibernateConfig;
+import jakarta.persistence.Query;
 import org.hibernate.Session;
 
 import java.util.List;
@@ -45,5 +46,9 @@ public class HocSinhRepository {
             session.getTransaction().rollback();
             e.printStackTrace();
         }
+    }
+    public List<HocSinh> thangnambingao(HocSinh hs) {
+        Query query = session.createQuery("SELECT hs FROM HocSinh order by hs.hoTen");
+        return query.getResultList();
     }
 }
